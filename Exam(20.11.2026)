@@ -1,0 +1,527 @@
+//Q1. Student Information
+const studentName = "Amit Kumar Shafi";
+const studentAge = 26;
+const courseName = "Full Stack Web Development";
+const Bengali = 85;
+const English = 90;
+const math = 88;
+const totalMarks = math + English + Bengali;
+const averageMarks = totalMarks / 3;
+console.log(" Student Information ");
+console.log("Name:", studentName);
+console.log("Age:", studentAge);
+console.log("Course:", courseName);
+console.log("Total Marks:", totalMarks);
+console.log("Average Marks:", averageMarks.toFixed(2));
+
+//Q2. Swap Two Variables
+let a = 5;
+let b = 10;
+console.log("Before swap: a =", a, "b =", b);
+a = a + b; 
+b = a - b; 
+a = a - b; 
+
+console.log("After swap: a =", a, "b =", b);
+
+//Q3. Simple Calculator
+
+let num_1 = parseFloat(prompt("Enter the first number:"));
+let operator = prompt("Enter an operator (+, -, *, /):");
+let num_2 = parseFloat(prompt("Enter the second number:"));
+
+let result;
+
+switch (operator) {
+  case "+":
+    result = num_1 + num_2;
+    break;
+  case "-":
+    result = num_1 - num_2;
+    break;
+  case "*":
+    result = num_1 * num_2;
+    break;
+  case "/":
+    result = num_2 !== 0 ? num_1 / num_2 : "Cannot divide by zero";
+    break;
+  case "%":
+    result = num_2 !== 0 ? num1 % num_2 : "Cannot divide by zero";
+    break;
+  default:
+    result = "Invalid operator";
+}
+console.log("Result:", result);
+alert("Result: " + result);
+
+//Q4. Employee Salary Calculator 
+
+let basicSalary = 50000;
+let hra = basicSalary * 0.20;   
+let da = basicSalary * 0.10;  
+let bonus = basicSalary * 0.05;
+
+let finalSalary = basicSalary + hra + da + bonus;
+console.log(" Employee Salary Breakdown ");
+console.log("Basic Salary: " + basicSalary);
+console.log("HRA (20%): " + hra);
+console.log("DA (10%): " + da);
+console.log("Bonus (5%): " + bonus);
+
+console.log("Final Salary: " + finalSalary);
+
+//Q5. Age Calculator
+
+let birthYear = 2000;
+let currentYear = new Date().getFullYear();
+let age = currentYear - birthYear;
+console.log("Approximate age is: " + age);
+/*
+Section 2: Scope, If-Else & Ternary Operator
+Questions 6–10 | 25 Marks
+*/
+//Q6. Variable Scope
+
+function testFunction() {
+  var a = 10;
+  let b = 20;
+  const c = 30;
+  console.log("Inside function:", a, b, c);
+}
+testFunction();
+if (true) {
+  var x = "I am var";
+  let y = "I am let";
+  const z = "I am const";
+}
+console.log(x);
+
+//Q7.Even or Odd 
+
+let number = 7;
+if (number % 2 === 0) {
+  console.log(number + " is Even");
+} else {
+  console.log(number + " is Odd");
+}
+
+//Q8. Largest Among Three Number .
+let w = 15;
+let e = 42;
+let r = 27;
+let largest;
+if (w >= e) {
+    if (w >= r) {
+        largest = w;
+    } else {
+        largest = r;
+    }
+} else {
+    if (e >= r) {
+        largest = e;
+    } else {
+        largest = r;
+    }
+}
+console.log("The largest number is: " + largest);
+
+//Q9. Student Grade Calculator . 
+
+let marks = Number(prompt("Enter the student's marks (0 - 100):"));
+if (isNaN(marks) || marks < 0 || marks > 100) {
+    console.log("Invalid input! Please enter marks between 0 and 100.");
+} else if (marks >= 90) {
+    console.log("Grade A+");
+} else if (marks >= 80) {
+    console.log("Grade A");
+} else if (marks >= 70) {
+    console.log("Grade B");
+} else if (marks >= 60) {
+    console.log("Grade C");
+} else if (marks >= 40) {
+    console.log("Grade D");
+} else {
+    console.log("Fail");
+}
+
+//Q10. Voting Eligibility .
+let myage = 20;
+if (myage >= 18) {
+  console.log("Eligible to vote");
+} else {
+  console.log("Not eligible to vote");
+}
+/*
+Section 3: Switch Case & Decision Making
+Questions 11–14 | 20 Marks
+*/
+// Q11. Day Finder
+
+let dayNumber = 3;
+
+switch (dayNumber) {
+  case 1:
+    console.log("Monday");
+    break;
+  case 2:
+    console.log("Tuesday");
+    break;
+  case 3:
+    console.log("Wednesday");
+    break;
+  case 4:
+    console.log("Thursday");
+    break;
+  case 5:
+    console.log("Friday");
+    break;
+  case 6:
+    console.log("Saturday");
+    break;
+  case 7:
+    console.log("Sunday");
+    break;
+  default:
+    console.log("Invalid input! Please enter a number between 1 and 7.");
+}
+
+//Q12. Month Finder .
+
+let monthNumber = parseInt(prompt("Enter a month number (1-12):"));
+
+switch (monthNumber) {
+  case 1:
+    console.log("Month: January | Days: 31");
+    break;
+  case 2:
+    console.log("Month: February | Days: 28");
+    break;
+  case 3:
+    console.log("Month: March | Days: 31");
+    break;
+  case 4:
+    console.log("Month: April | Days: 30");
+    break;
+  case 5:
+    console.log("Month: May | Days: 31");
+    break;
+  case 6:
+    console.log("Month: June | Days: 30");
+    break;
+  case 7:
+    console.log("Month: July | Days: 31");
+    break;
+  case 8:
+    console.log("Month: August | Days: 31");
+    break;
+  case 9:
+    console.log("Month: September | Days: 30");
+    break;
+  case 10:
+    console.log("Month: October | Days: 31");
+    break;
+  case 11:
+    console.log("Month: November | Days: 30");
+    break;
+  case 12:
+    console.log("Month: December | Days: 31");
+    break;
+  default:
+    console.log("Invalid month number! Please enter a number between 1 and 12.");
+}
+
+//Q13. Basic Calculator Using Switch .
+
+let num3 = parseFloat(prompt("Enter the first number:"));
+let _operator = prompt("Enter an operator(+, -, *, /,):");
+let num4 = parseFloat(prompt("Enter the second number:"));
+
+let _result;
+switch (_operator) {
+  case "+":
+    _result = num3 + num4;
+    console.log(`${num3} + ${num4} = ${_result}`);
+    break;
+
+  case "-":
+    _result = num3 - num4;
+    console.log(`${num3} - ${num4} = ${_result}`);
+    break;
+
+  case "*":
+    _result = num3 * num4;
+    console.log(`${num3} * ${num4} = ${_result}`);
+    break;
+
+  case "/":
+    if (num3 === 0) {
+      console.log("Error: Cannot divide by zero.");
+    } else {
+      _result = num3 / num4;
+      console.log(`${num3} / ${num4} = ${_result}`);
+    }
+    break;
+
+  default:
+    console.log("Invalid operator! Please use +, -, *, or /.");
+}
+
+//Q14. Traffic Signal System
+
+let signalColor = prompt("Enter the traffic signal color (Red, Yellow, Green):");
+
+switch (signalColor.toLowerCase()) {
+  case "red":
+    console.log("Stop");
+    break;
+
+  case "yellow":
+    console.log("Get Ready");
+    break;
+
+  case "green":
+    console.log("Go");
+    break;
+
+  default:
+    console.log("Invalid Signal");
+    break;
+}
+/*
+Section 4: Arrays & Objects
+Questions 15–19 | 25 Marks
+*/
+//Q15. Array Statistics .
+
+let _numbers =[4,6,2,4,7,2,3,9,2,8];
+let sum = 0;
+let largest_ = _numbers[0];
+let smallest = _numbers[0];
+for (let i = 0; i < _numbers.length; i++) {
+    sum += _numbers[i];
+
+    if (_numbers[i] > largest_) { 
+        largest_ = _numbers[i];
+    }
+
+    if (_numbers[i] < smallest) {
+        smallest = _numbers[i];
+    }
+}
+
+let average = sum / _numbers.length;
+console.log("Sum:", sum);
+console.log("Average:", average);
+console.log("Largest number:", largest_);
+console.log("Smallest number:", smallest);
+
+//Q16. Search an Element .
+
+const students = [
+  { id: 1, name: "Aarav" },
+  { id: 2, name: "Rajk" },
+  { id: 3, name: "Rohan" },
+  { id: 4, name: "Raj" }
+];
+
+const searchName = "Rohan";
+const studentExists = students.some(student => student.name.toLowerCase() === searchName.toLowerCase());
+if (studentExists) {
+  console.log(`${searchName} exists in the student list.`);
+} else {
+  console.log(`${searchName} does not exist in the student list.`);
+}
+
+const numbers =1;
+const seen = {};
+const uniqueNumbers = [2];
+
+for (let i = 0; i < numbers.length; i++) {
+  let currentNumber = numbers[i];
+  if (!seen[currentNumber]) {
+    seen[currentNumber] = true;
+    uniqueNumbers.push(currentNumber);
+  }
+}
+
+console.log("Original Array:", numbers);
+console.log("Unique Array:", uniqueNumbers);
+
+//Q18. Student Object Management .
+
+let _students =[
+  {
+    name: "Akash Ata",
+    rollNumber: 4,
+    course: "Computer Science",
+    Mark_s: 82
+  }
+];
+
+console.log(" Student Details ");
+console.log("Name:", _students[0].name);
+console.log("Roll Number:", _students[0].rollNumber);
+console.log("Course:", _students[0].course);
+console.log("Mark_s:", _students[0].mark_s);
+
+_students[0].marks = 91;
+_students[0].grade = "A";
+console.log("\n--- Updated Student Details ---");
+for (let key in _students[0]) {
+  console.log(key + ":", _students[0][key]);
+}
+
+// Q19. Product Management .
+const products = [
+  { id: 101, name: "Mouse", price: 68, stock: 25 },
+  { id: 102, name: "Keyboard", price: 400, stock: 12 },
+  { id: 103, name: "USB", price: 50, stock: 50 },
+  { id: 104, name: "Headphones", price: 800, stock: 8 },
+  { id: 105, name: "24-inch Monitor", price: 500, stock: 5 }
+];
+
+const expensiveProducts = products.filter(product => product.price > 1000);
+
+console.log("Products with price greater than 1000:");
+expensiveProducts.forEach(product => {
+  console.log(`ID: ${product.id}, Name: ${product.name}, Price: ₹${product.price}, Stock: ${product.stock}`);
+});
+/*
+Section 5: Loops, For...In & For...Of
+Questions 20–25 | 30 Marks
+*/
+//Q20. Multiplication Table .
+
+let s= Number(prompt("Enter a number:"));
+
+for (let i = 1; i <= 10; i++) {
+  console.log(`${s} x ${i} = ${s * i}`);
+}
+
+// Q21. Factorial Calculator.
+
+let n = 5;
+let factorial = 1;
+
+for (let i = 1; i <= n; i++) {
+    factorial *= i;
+}
+
+console.log(factorial);
+
+// Q22. Prime Number Checker .
+
+let num = 7;
+let isPrime = true;
+
+if (num <= 1) {
+  isPrime = false;
+} else {
+  for (let i = 2; i < num; i++) {
+    if (num % i === 0) {
+      isPrime = false;
+      break;    // Stop the loop if a divisor is found.
+    }
+  }
+}
+
+console.log(num + (isPrime ? " is a Prime Number" : " is Not a Prime Number"));
+
+// Q23. Reverse a Number
+
+let q = 12345;
+let reversed = 0;
+
+while (q > 0) {
+    let lastDigit = q % 10; 
+    reversed = (reversed * 10) + lastDigit; 
+    q = Math.floor(q / 10); 
+}
+
+console.log(reversed); // Output: 54321
+
+// Q24. Object Property Iterator .
+
+const employee = {
+  name: "Rahul Sharma",
+  age: 28,
+  department: "Engineering",
+  salary: 65000
+};
+for (let key in employee) {
+  console.log(key + ": " + employee[key]);
+}
+// Q25. Array Iterator.
+
+const cities = ["Kolkata", "Delhi", "Mumbai", "Chennai", "Bengaluru"];
+let totalCharacters = 0;
+for (const city of cities) {
+  console.log(city);
+  totalCharacters += city.length;
+}
+
+console.log("Total characters:", totalCharacters);
+/*
+Section 6: JSON & LocalStorage
+Questions 26–30 | 25 Marks
+*/
+// Q26. JSON Conversion .
+const user = {
+  name: "Rahul",
+  age: 22,
+  city: "Kolkata"
+};
+
+const jsonString = JSON.stringify(user);
+console.log("JSON String:", jsonString);
+
+const parsedObject = JSON.parse(jsonString);
+console.log("Parsed Object:", parsedObject);
+/*
+Q27. Save User Data in LocalStorage :
+
+Create a form that accepts:
+ Name
+ Email
+ Phone Number
+Save the submitted information in LocalStorage as JSON data. Retrieve and display the 
+saved information.
+
+Q28. LocalStorage Counter :
+
+Create a counter application with three buttons:
+ Increment
+ Decrement
+ Reset
+Save the counter value in LocalStorage so that the value remains available after 
+refreshing the browser.
+
+
+Q29. Shopping Cart Using LocalStorage :
+
+Create a simple shopping cart application.
+Requirements:
+ Create an array of product objects.
+ Add products to the cart.
+ Remove products from the cart.
+ Calculate the total cart price.
+ Save cart information in LocalStorage.
+ Retrieve cart information after page refresh.
+
+
+Q30. Student Registration System :
+
+Develop a basic student registration system using JavaScript, Objects, Arrays, JSON, and 
+LocalStorage.
+Requirements:
+1. Create a student registration form.
+2. Accept student name, email, phone number, and course.
+3. Store each student as an object.
+4. Maintain all students in an array.
+5. Convert the student array into JSON.
+6. Save student information in LocalStorage.
+7. Display all registered students in an HTML table.
+8. Implement student deletion.
+9. Implement student data editing.
+10. Ensure data remains available after refreshing the browser.
+*/
